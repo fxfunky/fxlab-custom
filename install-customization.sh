@@ -12,7 +12,7 @@ read -p "Do you want to continue (Y/N)? " choice
 
 # CONFIRMATION
 if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
-	echo "fxlab-custom will be installed..."
+	echo "fxlab-custom will be installed"
 
 	# Check if apt-get is available
 	if command -v apt-get &>/dev/null; then
@@ -37,6 +37,7 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	fi
 
 	# COPY CUSTOM CONFIGURATION FILES
+	echo "Custom configuration files will be copied"
 	mv $HOME/.bashrc $HOME/.bashrc_backup && cp .bashrc $HOME/.bashrc
 	mv $HOME/.nanorc $HOME/.nanorc_backup && cp .nanorc $HOME/.nanorc
 	sudo cp fxlab-custom.ini /usr/share/mc/skins/.
