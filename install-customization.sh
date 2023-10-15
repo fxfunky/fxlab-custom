@@ -8,7 +8,7 @@ echo " > This script will install fxlab-custom settings for current linux enviro
 echo " > Backup of all existing configuration files will be created with suffix _backup in home directory"
 echo " "
 
-read -p "Do you want to continue (Y/N)? " choice
+read -p "Do you want to continue? [Y/N] " choice
 
 # CONFIRMATION
 if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
@@ -28,8 +28,6 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
     	# INSTALL BASIC SOFTWARE USING YUM
 		sudo yum install $software_to_install
 
-
-
 	else
     	echo "Neither apt-get nor yum found. Cannot install packages."
     	exit 1
@@ -45,14 +43,18 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 
 	echo "Done."
 	echo "End of script."
-	read -p "Do you want delete 'fxlab-custom' repository from this computer? " del_choice
+	read -p "Do you want delete 'fxlab-custom' repository from this computer? [Y/N]" del_choice
 
+	# DELETE AFTER INSTALATION
 	if [ "$del_choice" == "Y" ] || [ "$del_choice" == "y" ]; then
 		echo "fxlab-custom will be deleted"
 
 	elif [ "$del_choice" == "N" ] || [ "$del_choice" == "n" ]; then
 	    echo "Exiting the script."
 	    exit 0
+
+	else
+	    echo "Invalid choice. Please enter [Y/N] "
 
 	fi
 
@@ -61,5 +63,5 @@ elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
     echo "Exiting the script."
     exit 0
 else
-    echo "Invalid choice. Please enter Y for Yes or N for No."
+    echo "Invalid choice. Please enter [Y/N] "
 fi
