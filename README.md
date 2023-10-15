@@ -10,6 +10,7 @@
 * 'c' alias for clear screen command
 * added 'run' to repeatedely run scripts, programs, commands (run 10 echo "Hello" - prints out Hello ten times)
 * enable linenumbers in nano text editor
+* change tab size to 4 instead of 8 in nano text editor
 * custom midnight commander skin
 
 ### Single command usage:
