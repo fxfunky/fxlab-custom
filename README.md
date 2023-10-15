@@ -1,4 +1,4 @@
-# just one command to set linux environment to my needs 👌
+## just one command to set linux environment to my needs 👌
 
 ## usage:
 
