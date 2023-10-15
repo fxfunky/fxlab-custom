@@ -43,6 +43,20 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	sudo cp fxlab-custom.ini /usr/share/mc/skins/.
 	mv $HOME/.config/mc/ini $HOME/.config/mc/ini_backup && cp ini $HOME/.config/mc/ini
 
+	echo "Done."
+	echo "End of script."
+	echo "Do you want delete 'fxlab-custom' repository from this computer?"
+
+	if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
+		echo "fxlab-custom will be deleted"
+
+	elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
+	    echo "Exiting the script."
+	    exit 0
+
+	fi
+
+
 elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
     echo "Exiting the script."
     exit 0
