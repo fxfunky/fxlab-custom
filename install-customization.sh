@@ -1,6 +1,7 @@
 #!/bin/bash
 software_to_install="mc nano rsync htop"
 is_root=whoami
+echo "$is_root is current user."
 
 
 
