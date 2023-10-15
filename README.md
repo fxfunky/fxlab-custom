@@ -1,4 +1,4 @@
-## just one command to set linux environment to my needs 👌
+## Just one command to set linux environment to my needs 👌
 
 ### Features
 * runs apt update command
