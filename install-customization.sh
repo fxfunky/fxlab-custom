@@ -48,9 +48,12 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	# DELETE AFTER INSTALATION
 	if [ "$del_choice" == "Y" ] || [ "$del_choice" == "y" ]; then
 		echo "fxlab-custom will be deleted"
-		rm -rf ../fxlab-custom
+		cd ..
+		rm -rf fxlab-custom
+
 
 	elif [ "$del_choice" == "N" ] || [ "$del_choice" == "n" ]; then
+	    cd ..
 	    echo "Exiting the script."
 	    exit 0
 
@@ -61,6 +64,7 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 
 
 elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
+    cd ..
     echo "Exiting the script."
     exit 0
 else
