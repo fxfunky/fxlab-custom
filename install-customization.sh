@@ -18,14 +18,16 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	if command -v apt-get &>/dev/null; then
     	echo "Using apt-get for package installation."
 		echo "Following packages will be instaled: " $software_to_install
-# INSTALL BASIC SOFTWARE WITH APT
+
+		# INSTALL BASIC SOFTWARE WITH APT
 		sudo apt-get update && sudo apt-get install $software_to_install
 
 	# Check if yum is available
 	elif command -v yum &>/dev/null; then
     	echo "Using yum for package installation."
 		echo "Following packages will be instaled: " $software_to_install
-    	# INSTALL BASIC SOFTWARE USING YUM
+
+		# INSTALL BASIC SOFTWARE USING YUM
 		sudo yum install $software_to_install
 
 	else
@@ -41,7 +43,6 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	sudo cp fxlab-custom.ini /usr/share/mc/skins/.
 	mv $HOME/.config/mc/ini $HOME/.config/mc/ini_backup && cp ini $HOME/.config/mc/ini
 
-	echo "Done."
 	echo "End of script."
 	read -p "Do you want delete 'fxlab-custom' repository from this computer? [Y/N]" del_choice
 
