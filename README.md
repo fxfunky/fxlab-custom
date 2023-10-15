@@ -12,6 +12,11 @@
 * enable linenumbers in nano text editor
 * custom midnight commander skin
 
+### Single command usage:
+```
+git clone https://github.com/fxfunky/fxlab-custom.git && cd fxlab-custom && sudo chmod +x install-customization.sh && ./install-customization.sh
+```
+
 ### Step-by-step usage:
 
 ```
@@ -29,10 +34,4 @@ sudo chmod +x install-customization.sh
 
 ```
 ./install-customization.sh
-```
-
-### Single command usage:
-
-```
-git clone https://github.com/fxfunky/fxlab-custom.git && cd fxlab-custom && sudo chmod +x install-customization.sh && ./install-customization.sh
 ```
