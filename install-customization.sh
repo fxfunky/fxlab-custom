@@ -45,7 +45,7 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 
 	echo "Done."
 	echo "End of script."
-	echo "Do you want delete 'fxlab-custom' repository from this computer?"
+	read -p "Do you want delete 'fxlab-custom' repository from this computer? " del_choice
 
 	if [ "$del_choice" == "Y" ] || [ "$del_choice" == "y" ]; then
 		echo "fxlab-custom will be deleted"
