@@ -47,10 +47,10 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	echo "End of script."
 	echo "Do you want delete 'fxlab-custom' repository from this computer?"
 
-	if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
+	if [ "$del_choice" == "Y" ] || [ "$del_choice" == "y" ]; then
 		echo "fxlab-custom will be deleted"
 
-	elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
+	elif [ "$del_choice" == "N" ] || [ "$del_choice" == "n" ]; then
 	    echo "Exiting the script."
 	    exit 0
 
