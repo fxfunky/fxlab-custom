@@ -1,5 +1,5 @@
 #!/bin/bash
-software_to_install = "mc nano rsync htop"
+software_to_install="mc nano rsync htop"
 
 # WELCOME MESSAGE
 echo " "
@@ -17,12 +17,14 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	# Check if apt-get is available
 	if command -v apt-get &>/dev/null; then
     	echo "Using apt-get for package installation."
-		# INSTALL BASIC SOFTWARE WITH APT
+		echo "Following packages will be instaled: " $software_to_install
+# INSTALL BASIC SOFTWARE WITH APT
 		sudo apt-get update && sudo apt-get install $software_to_install
 
 	# Check if yum is available
 	elif command -v yum &>/dev/null; then
     	echo "Using yum for package installation."
+		echo "Following packages will be instaled: " $software_to_install
     	# INSTALL BASIC SOFTWARE USING YUM
 		sudo yum install $software_to_install
 
