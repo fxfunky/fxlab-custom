@@ -1,4 +1,5 @@
 #!/bin/bash
+software_to_install = "mc nano rsync htop"
 
 # WELCOME MESSAGE
 echo " "
@@ -13,8 +14,25 @@ read -p "Do you want to continue (Y/N)? " choice
 if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	echo "fxlab-custom will be installed..."
 
-	# INSTALL BASIC SOFTWARE
-	sudo apt-get update && sudo apt-get install mc nano rsync htop
+	# Check if apt-get is available
+	if command -v apt-get &>/dev/null; then
+    	echo "Using apt-get for package installation."
+		# INSTALL BASIC SOFTWARE WITH APT
+		sudo apt-get update && sudo apt-get install $software_to_install
+
+	# Check if yum is available
+	elif command -v yum &>/dev/null; then
+    	echo "Using yum for package installation."
+    	# INSTALL BASIC SOFTWARE USING YUM
+		sudo yum install $software_to_install
+
+
+
+	else
+    	echo "Neither apt-get nor yum found. Cannot install packages."
+    	exit 1
+
+	fi
 
 	# COPY CUSTOM CONFIGURATION FILES
 	mv $HOME/.bashrc $HOME/.bashrc_backup && cp .bashrc $HOME/.bashrc
