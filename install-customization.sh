@@ -1,5 +1,8 @@
 #!/bin/bash
 software_to_install="mc nano rsync htop"
+is_root=whoami
+
+
 
 # WELCOME MESSAGE
 echo " "
@@ -20,7 +23,11 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 		echo "Following packages will be instaled: " $software_to_install
 
 		# INSTALL BASIC SOFTWARE WITH APT
-		sudo apt-get update && sudo apt-get install $software_to_install
+		if [ "$is_root" == "root" ]; then
+			apt-get update && apt-get install $software_to_install
+		else
+			sudo apt-get update && sudo apt-get install $software_to_install
+		fi
 
 	# Check if yum is available
 	elif command -v yum &>/dev/null; then
@@ -28,7 +35,11 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 		echo "Following packages will be instaled: " $software_to_install
 
 		# INSTALL BASIC SOFTWARE USING YUM
-		sudo yum install $software_to_install
+		if [ "$is_root" == "root" ]; then
+			yum install $software_to_install
+		else
+			sudo yum install $software_to_install
+		fi
 
 	else
     	echo "Neither apt-get nor yum found. Cannot install packages."
@@ -40,7 +51,11 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	echo "Custom configuration files will be copied"
 	mv $HOME/.bashrc $HOME/.bashrc_backup && cp .bashrc $HOME/.bashrc
 	mv $HOME/.nanorc $HOME/.nanorc_backup && cp .nanorc $HOME/.nanorc
-	sudo cp fxlab-custom.ini /usr/share/mc/skins/.
+	if [ "$is_root" == "root" ]; then
+		cp fxlab-custom.ini /usr/share/mc/skins/.
+	else
+		sudo cp fxlab-custom.ini /usr/share/mc/skins/.
+	fi
 	mv $HOME/.config/mc/ini $HOME/.config/mc/ini_backup && cp ini $HOME/.config/mc/ini
 
 	echo "End of script."
