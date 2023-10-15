@@ -5,3 +5,14 @@
 ```
 git clone https://github.com/fxfunky/fxlab-custom.git
 ```
+
+``` 
+cd fxlab-custom
+```
+
+
+```
+sudo chmod +x install-customization.sh
+```
+
+
