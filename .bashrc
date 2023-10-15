@@ -1,3 +1,8 @@
+#
+# This cnfiguration file was provided with fxlab-custom package
+# https://github.com/fxfunky/fxlab-custom
+#
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -94,31 +99,12 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
-
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias dbgserv-1520='nc -u -k -l 1520 > /home/mvaclavek/logs/tetra_debug_eth.log 2>&1 | less +F -S /home/mvaclavek/logs/tetra_debug_eth.log'
-alias dbgserv-5453='nc -u -k -l 5453 > /home/mvaclavek/logs/tetra_debug_5453.log 2>&1 | less +F -S /home/mvaclavek/logs/tetra_debug_5453.log'
-alias syslog-514='sudo nc -u -k -l 514 > /home/mvaclavek/logs/tetra_syslog_514.log 2>&1 | less +F -S /home/mvaclavek/logs/tetra_syslog_514.log'
-alias tms='cd /home/mvaclavek/projects/tms-light'
-alias bprot='cd /home/mvaclavek/projects/tms-light/testcases/bprot'
 alias version='cat /etc/os-release' 
 alias linux='cat /etc/os-release'
-alias backup_storage_mount='ssh root@10.0.0.15 /home/backups/mountscript.sh'
-alias backup_storage_umount='ssh root@10.0.0.15 /home/backups/umountscript.sh'
-alias backup_storage_mount_as_local='sudo sshfs -o allow_other -p 22 root@10.0.0.15:/media/backup_storage/backups /media/backups'
-alias printer-on='curl http://10.0.0.104/cm?cmnd=Power%20On'
-alias printer-off='curl http://10.0.0.104/cm?cmnd=Power%20Off'
-alias xlogs='cd /home/mvaclavek/logs/teta'
-alias tmscli='python3.10 /home/mvaclavek/projects/SimpleTMS/simpletms_cli.py'
-#alias python='python3.8'
-alias ldx='cd /home/mvaclavek/projects/SimpleTMS/qa-tools/termlog-batch'
 alias cp='rsync -rva'
-alias mxmaker='cd /home/mvaclavek/projects/SimpleTMS/qa-tools/mxmaker'
-alias stmslog='tail -f /var/log/SimpleTMS/worker.log'
-#alias mc='mc -a'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -149,12 +135,3 @@ run() {
     echo repeated: $i
     done
 }
-
-#function pbyte
-pbyte() {
-    input=$1
-    echo $input | sed 's/.\{2\}/& /g'
-
-}
-
-export LANG=en
