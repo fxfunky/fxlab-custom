@@ -36,3 +36,5 @@ sudo chmod +x install-customization.sh
 ```
 ./install-customization.sh
 ```
+
+*Note: git must be installed first*
