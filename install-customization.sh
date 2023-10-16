@@ -51,7 +51,14 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	# COPY CUSTOM CONFIGURATION FILES
 	echo "Custom configuration files will be copied"
 	mv $HOME/.bashrc $HOME/.bashrc_backup && cp .bashrc $HOME/.bashrc
-	mv $HOME/.nanorc $HOME/.nanorc_backup && cp .nanorc $HOME/.nanorc
+	
+	if test -e $HOME/.nanorc; then
+    	mv $HOME/.nanorc $HOME/.nanorc_backup
+    	cp .nanorc $HOME/.nanorc
+    else
+		cp .nanorc $HOME/.nanorc
+	fi
+
 	if [ "$is_root" == "root" ]; then
 		cp fxlab-custom.ini /usr/share/mc/skins/.
 	else
