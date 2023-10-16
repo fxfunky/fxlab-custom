@@ -51,6 +51,13 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 	# COPY CUSTOM CONFIGURATION FILES
 	echo "Custom configuration files will be copied"
 	mv $HOME/.bashrc $HOME/.bashrc_backup && cp .bashrc $HOME/.bashrc
+
+	if test -e $HOME/.bashrc; then
+    	mv $HOME/.bashrc $HOME/.bashrc_backup
+    	cp .bashrc $HOME/.bashrc
+    else
+		cp .bashrc $HOME/.bashrc
+	fi
 	
 	if test -e $HOME/.nanorc; then
     	mv $HOME/.nanorc $HOME/.nanorc_backup
