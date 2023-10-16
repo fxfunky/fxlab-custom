@@ -42,3 +42,8 @@ sudo chmod +x install-customization.sh
 ```
 
 *Note: git must be installed first*
+
+### Tested systems:
+* Ubuntu 20.04.3 LTS
+* Fedora Linux 38 (Server Edition)
+* Debian GNU/Linux 9 (stretch)
