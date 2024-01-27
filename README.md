@@ -47,3 +47,4 @@ sudo chmod +x install-customization.sh
 * Ubuntu 20.04.3 LTS
 * Fedora Linux 38 (Server Edition)
 * Debian GNU/Linux 9 (stretch)
+* Raspbian GNU/Linux 12 (bookworm)
