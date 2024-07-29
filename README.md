@@ -48,3 +48,4 @@ sudo chmod +x install-customization.sh
 * Fedora Linux 38 (Server Edition)
 * Debian GNU/Linux 9 (stretch)
 * Raspbian GNU/Linux 12 (bookworm)
+* Raspbian GNU/Linux 11 (bullseye)

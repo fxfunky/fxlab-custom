@@ -25,9 +25,9 @@ if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
 
 		# INSTALL BASIC SOFTWARE WITH APT
 		if [ "$is_root" == "root" ]; then
-			apt-get update && apt-get install $software_to_install
+			apt-get update && apt-get install -y $software_to_install
 		else
-			sudo apt-get update && sudo apt-get install $software_to_install
+			sudo apt-get update && sudo apt-get install -y $software_to_install
 		fi
 
 	# Check if yum is available
